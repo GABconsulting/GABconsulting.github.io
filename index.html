@@ -168,13 +168,13 @@
 
 									
 									    <!-- Update the Google forms URL in action-->
-									<form method="POST" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdIx4aSkSQCdPjLqUNOhO52ZoIQ4w1beJwdOv2uqPvFcG6Nzw/formResponse">
+									<form class="ajaxForm" accept-charset="UTF-8" action="https://formcarry.com/s/eS_Pml0Vxx">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" required name="entry.336509965" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" required name="entry.1650526783" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" required name="entry.175747383" id="subject" placeholder="Subject" /></div>
-											
-											<div class="col-12"><textarea required name="entry.1990076333" id="message" placeholder="Message" rows="6"></textarea></div>
+											<div class="col-6 col-12-xsmall"><input type="text" required name="name" id="name" placeholder="Name" /></div>
+											<div class="col-6 col-12-xsmall"><input type="email" required name="email" id="email" placeholder="Email" /></div>
+											<input type="hidden" name="_gotcha">
+											<div class="col-12"><input type="text" required name="subject" id="subject" placeholder="Subject" /></div>					
+											<div class="col-12"><textarea required name="message" id="message" placeholder="Message" rows="6"></textarea></div>
 											<div class="col-12">
 												<ul class="actions">
 													<li><input type="submit" class="primary" value="Send Message" /></li>
@@ -447,7 +447,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+    $(".ajaxForm").submit(function(e){
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    window.location.href = 'https://gabconsulting.github.io/thanks'; // change this. 
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
+    });
+    });
+    </script>
 
 	</body>
 </html>
