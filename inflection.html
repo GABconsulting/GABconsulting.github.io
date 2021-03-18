@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html lang="en">
 	<head>
 		<title>Gavin Bembridge</title>
@@ -95,14 +91,11 @@
 											</div>
 										</article>
 									</div>
-									<ul class="feature-icons">
-										<li class="icon solid fa-mars">Pronouns</li>
-										<li class="icon solid fa-handshake">Politeness</li>
-										<li class="icon solid fa-american-sign-language-interpreting">Signed Languages</li>
-									</ul>
 						</div>
 					</section>
+						
 				<!-- Footer -->
+						
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
@@ -121,28 +114,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script>
-    $(function(){
-    $(".ajaxForm").submit(function(e){
-        e.preventDefault();
-        var href = $(this).attr("action");
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: href,
-            data: $(this).serialize(),
-            success: function(response){
-                if(response.status == "success"){
-                    window.location.href = 'https://gabconsulting.github.io/thanks'; // change this. 
-                }else{
-                    alert("An error occured: " + response.message);
-                }
-            }
-        });
-    });
-    });
-    </script>
 
 	</body>
 </html>
