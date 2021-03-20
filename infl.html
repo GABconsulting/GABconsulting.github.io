@@ -73,7 +73,7 @@
 									<p>My work investigates Spanish verbs in Distributed Morphology, a syntax-centric approach to the syntax-morphology interface. The overall approach taken in the dissertation is twofold. While other scholars who have treated verbal inflection as primarily a linear arrangement of morphemes, my dissertation advocates having an adequate semantic analysis of temporal and modal categories to avoid artificially divorcing the morphosyntax of verbs from their morphosemantics. The second approach calls for a reduction to the amount of conceptual machinery needed to analyze Spanish verbs. Below you can find two posters that touch on different but related aspects of my doctoral work.</p>
 									<div class="features">
 										<article>
-											<a href="images/LSRL47.svg" title="The Future of the Conditional"class="image"><img src="images/chapter4.png" alt="" /></a>
+											<a href="images/LSRL47.svg" title="The Future of the Conditional" class="image"><img src="images/chapter4.png" alt="" /></a>
 											<div class="inner">
 												<h4>The Future of the Conditional</h4>
 												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
@@ -119,11 +119,29 @@
 		<script type="text/javascript">
 	     $( document ).ready(function() {
          $('.image').magnificPopup({
-          type:'image'
+         type:'image',
+         mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+  		zoom: {
+    	enabled: true, // By default it's false, so don't forget to enable it
+
+    	duration: 300, // duration of the effect, in milliseconds
+    	easing: 'ease-in-out', // CSS transition easing function
+
+    // The "opener" function should return the element from which popup will be zoomed in
+    // and to which popup will be scaled down
+    // By defailt it looks for an image tag:
+    	opener: function(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});
      
         });
           
-        });
 </script>
 	
 
